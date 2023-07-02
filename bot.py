@@ -1,7 +1,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # Replace YOUR_BOT_TOKEN with your actual bot token
-updater = Updater(token='YOUR_BOT_TOKEN', use_context=True)
+updater = Updater(token='5707101777:AAH2ttEJTJCv0YcnATqsY_zrsD0IdSNd5e4', use_context=True)
 
 def time(update, context):
     import datetime
