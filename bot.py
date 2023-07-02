@@ -13,3 +13,20 @@ dispatcher.add_handler(time_handler)
 
 updater.start_polling()
 updater.idle()
+
+
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+
+# Replace YOUR_BOT_TOKEN with your actual bot token
+updater = Updater(token='YOUR_BOT_TOKEN', use_context=True)
+
+def time(update, context):
+    import datetime
+    now = datetime.datetime.now()
+    update.message.reply_text('The current time is {}'.format(now))
+
+time_handler = MessageHandler(Filters.regex(r'(\btime\b|\bوقت\b)'), time)
+dispatcher.add_handler(time_handler)
+
+updater.start_polling()
+updater.idle()
